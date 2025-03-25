@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_USER=rustamation
+      - POSTGRES_PASSWORD=rustamation
+      - POSTGRES_DB=rustamation
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  db_data:
